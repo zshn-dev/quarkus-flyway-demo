@@ -21,6 +21,11 @@ dependencies {
     implementation("io.quarkus:quarkus-arc")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
+
+    // JOOQ
+    implementation("org.jooq:jooq:3.20.3")
+    implementation("org.jooq:jooq-meta:3.20.3")
+    implementation("org.jooq:jooq-codegen:3.20.3")
 }
 
 group = "com.demo"
