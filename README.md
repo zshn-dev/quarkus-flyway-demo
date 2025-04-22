@@ -1,4 +1,4 @@
-# quarkus-jooq-flyway-demo
+# quarkus-flyway-demo
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
