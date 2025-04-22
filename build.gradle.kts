@@ -16,16 +16,10 @@ dependencies {
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
     implementation("io.quarkus:quarkus-rest")
     implementation("io.quarkus:quarkus-flyway")
-    implementation("io.quarkiverse.jooq:quarkus-jooq:2.1.0")
     implementation("io.quarkus:quarkus-jdbc-postgresql")
     implementation("io.quarkus:quarkus-arc")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
-
-    // JOOQ
-    implementation("org.jooq:jooq:3.20.3")
-    implementation("org.jooq:jooq-meta:3.20.3")
-    implementation("org.jooq:jooq-codegen:3.20.3")
 }
 
 group = "com.demo"
