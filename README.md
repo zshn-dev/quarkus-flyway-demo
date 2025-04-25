@@ -4,6 +4,27 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
 
+## Setup
+
+Create a `.env` file at project root directory and ensure it has the following env vars:
+```text
+POSTGRES_USER=<insert_value>
+POSTGRES_PW=<insert_value>
+POSTGRES_DB=<insert_value>
+PGADMIN_MAIL=<insert_value>
+PGADMIN_PW=<insert_value>
+```
+
+Run `docker compose up -d` to start PostgreSQL & pgadmin. Once started you can access pgadmin at `http://localhost:5050/`.
+Add and save a new DB server with following details:
+```text
+Name: flyway_demo_db
+Host name/address: host.docker.internal
+Port: 5432
+Username: <insert_env_var_value>
+Password: <insert_env_var_value>
+```
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
@@ -67,27 +88,6 @@ Easily start your REST Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
 
-# Dev Setup
-
-Create a `.env` file at project root directory and ensure it has the following env vars:
-```text
-POSTGRES_USER=<insert_value>
-POSTGRES_PW=<insert_value>
-POSTGRES_DB=<insert_value>
-PGADMIN_MAIL=<insert_value>
-PGADMIN_PW=<insert_value>
-```
-
-Run `docker compose up -d` to start PostgreSQL & PGAdmin. Once started you can access pgadmin at `http://localhost:5050/`.
-Add and save a new server with following details:
-```text
-Name: flyway_demo_db
-Host name/address: host.docker.internal
-Port: 5432
-Username: <insert_env_var_value>
-Password: <insert_env_var_value>
-```
-
-Run `gradle clean quarkusDev` in a new terminal to start the Quarkus server. Check logs to verify if migration was performed successfully.
+## Post-startup
 
 Open pgadmin and check if the migrations were performed and `flyway_schema_history` table has recorded the migrations.
